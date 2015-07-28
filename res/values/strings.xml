@@ -150,6 +150,7 @@
 
     <string name="mainmenu_frontpage">Front Page</string>
     <string name="mainmenu_all">All Subreddits</string>
+    <string name="mainmenu_random">Random Subreddit</string>
     <string name="mainmenu_custom">Custom Subreddit</string>
     <string name="mainmenu_custom_invalid_name">Invalid subreddit name.</string>
     <string name="mainmenu_saved">Saved Posts</string>

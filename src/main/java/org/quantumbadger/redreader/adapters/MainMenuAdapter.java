@@ -144,6 +144,7 @@ public class MainMenuAdapter extends BaseAdapter {
 
 		mainItems.add(makeItem(context.getString(R.string.mainmenu_frontpage), MainMenuFragment.MainMenuAction.FRONTPAGE, null, null));
 		mainItems.add(makeItem(context.getString(R.string.mainmenu_all), MainMenuFragment.MainMenuAction.ALL, null, null));
+		mainItems.add(makeItem(context.getString(R.string.mainmenu_random), MainMenuFragment.MainMenuAction.RANDOM, null, null));
 		mainItems.add(makeItem(context.getString(R.string.mainmenu_custom), MainMenuFragment.MainMenuAction.CUSTOM, null, null));
 
 		if(!user.isAnonymous()) {
