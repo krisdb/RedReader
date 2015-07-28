@@ -210,6 +210,12 @@ public class MainActivity extends RefreshableActivity
 				onSelected(SubredditPostListURL.getAll());
 				break;
 
+			case RANDOM:
+			{
+				onSelected(SubredditPostListURL.getRandom());
+				break;
+			}
+
 			case SUBMITTED:
 				onSelected(UserPostListingURL.getSubmitted(username));
 				break;

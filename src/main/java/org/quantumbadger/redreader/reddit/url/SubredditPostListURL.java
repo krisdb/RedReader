@@ -19,6 +19,8 @@ package org.quantumbadger.redreader.reddit.url;
 
 import android.content.Context;
 import android.net.Uri;
+
+import org.json.JSONObject;
 import org.quantumbadger.redreader.R;
 import org.quantumbadger.redreader.common.Constants;
 import org.quantumbadger.redreader.common.General;
@@ -38,6 +40,10 @@ public class SubredditPostListURL extends PostListingURL {
 		return new SubredditPostListURL(Type.ALL, null, PostListingController.Sort.HOT, null, null, null);
 	}
 
+	public static SubredditPostListURL getRandom() {
+		return new SubredditPostListURL(Type.RANDOM, null, PostListingController.Sort.HOT, null, null, null);
+	}
+
 	public static RedditURLParser.RedditURL getSubreddit(String subreddit) throws RedditSubreddit.InvalidSubredditNameException {
 
 		Uri.Builder builder = new Uri.Builder();
@@ -50,7 +56,7 @@ public class SubredditPostListURL extends PostListingURL {
 	}
 
 	public enum Type {
-		FRONTPAGE, ALL, SUBREDDIT, SUBREDDIT_COMBINATION, ALL_SUBTRACTION
+		FRONTPAGE, ALL, RANDOM, SUBREDDIT, SUBREDDIT_COMBINATION, ALL_SUBTRACTION
 	}
 
 	public final Type type;
@@ -130,6 +136,11 @@ public class SubredditPostListURL extends PostListingURL {
 			case ALL:
 				builder.encodedPath("/r/all");
 				break;
+
+			case RANDOM: {
+				builder.encodedPath("/r/random");
+				break;
+			}
 
 			case SUBREDDIT:
 			case SUBREDDIT_COMBINATION:
@@ -317,6 +328,9 @@ public class SubredditPostListURL extends PostListingURL {
 
 			case ALL:
 				return context.getString(R.string.mainmenu_all);
+
+			case RANDOM	:
+				return context.getString(R.string.mainmenu_random);
 
 			case SUBREDDIT:
 				try {
